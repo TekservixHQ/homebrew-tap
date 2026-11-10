@@ -10,7 +10,7 @@ jobs:
       matrix:
         os: [macos-latest, ubuntu-latest]
     steps:
-      - uses: Homebrew/actions/setup-homebrew@master
+      - uses: Homebrew/actions/setup-homebrew@main
       - run: brew tap tekservixhq/tap "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY"
       - run: brew audit --strict --online tekservixhq/tap/tekservix
       - run: brew install tekservixhq/tap/tekservix
