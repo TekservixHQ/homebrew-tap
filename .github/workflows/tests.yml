@@ -1,0 +1,17 @@
+name: tests
+on:
+  push:
+  pull_request:
+jobs:
+  brew:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    steps:
+      - uses: Homebrew/actions/setup-homebrew@master
+      - run: brew tap tekservixhq/tap "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY"
+      - run: brew audit --strict --online tekservixhq/tap/tekservix
+      - run: brew install tekservixhq/tap/tekservix
+      - run: brew test tekservixhq/tap/tekservix
