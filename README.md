@@ -1,5 +1,7 @@
 # Tekservix Homebrew tap
 
+Homebrew tap for the SMS Gora SMS Gateway and **WAservix WhatsApp API Gateway** command-line tools by Tekservix.
+
 ```bash
 brew install tekservixhq/tap/tekservix
 ```
